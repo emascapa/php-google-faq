@@ -1,7 +1,10 @@
 .container-lg {
     max-width: 960px;
+}
+
+.container-lg.container_main {
     padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 }
 
 .mb_faq {
@@ -10,4 +13,8 @@
 
 main a {
     text-decoration: none;
+}
+
+footer {
+    background-color: lightgray;
 }

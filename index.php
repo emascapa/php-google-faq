@@ -45,6 +45,21 @@ $faq_list = [
         ],
     ],
 ];
+
+$footer_links = [
+    'Google' => '#',
+    'Tutto su Google' => '#',
+    'Privacy' => '#',
+    'Termini' => '#',
+];
+
+$languages = [
+    'Italiano',
+    'Spagnolo',
+    'Messicano',
+    'Napoletano',
+    'Hindi',
+]
 ?>
 
 <!doctype html>
@@ -65,9 +80,8 @@ $faq_list = [
 
 <body>
 
-    <!--     <ol><li><div><span>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</span><ul><li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li><li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li></ul></div></li><li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li></ol>  -->
     <main>
-        <div class="container-lg">
+        <div class="container-lg container_main">
 
             <?php foreach ($faq_list as $item) { ?>
                 <div class="mb_faq">
@@ -76,7 +90,7 @@ $faq_list = [
 
                     <?php foreach ($item['answer'] as $parag) { ?>
 
-                        <p><?php echo $parag ?></p>
+                        <p><?php echo $parag; ?></p>
 
                     <?php } ?>
 
@@ -85,6 +99,26 @@ $faq_list = [
             <?php } ?>
         </div>
     </main>
+
+    <footer class="py-3">
+        <div class="container-lg ">
+            <div class="row row-cols-2">
+                <div class="col">
+                    <?php foreach ($footer_links as $name => $link) { ?>
+                        <a href="<?php echo $link ?>" class="text-decoration-none text-secondary"><small><?php echo $name; ?> &#8226;</small></a>
+                    <?php } ?>
+                </div>
+                <div class="col text-end">
+                    <select name="" id="">
+                        <?php foreach ($languages as $language) { ?>
+                            <option value=""><?php echo $language; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
 
 </body>
