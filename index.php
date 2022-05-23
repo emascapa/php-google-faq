@@ -46,6 +46,14 @@ $faq_list = [
     ],
 ];
 
+$header_nav = [
+    'Introduzione' => '#',
+    'Norme sulla privacy' => '#',
+    'Termini di servizio' => '#',
+    'Tecnologie' => '#',
+    'Domande frequenti' => '#',
+];
+
 $footer_links = [
     'Google' => '#',
     'Tutto su Google' => '#',
@@ -76,9 +84,52 @@ $languages = [
 
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <script src="https://kit.fontawesome.com/ac7715c080.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+
+    <header class="border-bottom pt-3">
+        <div class="container-fluid">
+
+            <div class="row row-cols-1 row-cols-sm-2 mb-3">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="https://cdn.pixabay.com/photo/2015/11/02/14/01/google-1018443_960_720.png" alt="logo" height="30px">
+                        <h3 class="ms-2">Privacy e termini</h3>
+                    </div>
+                </div>
+                <div class="col d-none d-sm-block">
+
+                    <div class="d-flex justify-content-end align-items-center">
+                        <i class="fa-solid fa-rocket me-3"></i>
+
+                        <img src="https://picsum.photos/30/30" alt="" class="d-block rounded-pill">
+                    </div>
+
+                </div>
+            </div>
+
+            <nav class="d-none d-md-block">
+
+                <div class="d-flex">
+                    <?php foreach ($header_nav as $nav_link => $link) { ?>
+
+                        <h6 class="mb-0 pb-2 me-4 <?php if ($nav_link == 'Domande frequenti') {
+                                                        echo 'border-bottom border-3 border-primary';
+                                                    } ?>">
+                            <a href="<?php echo $link ?>" class="text-decoration-none <?php echo ($nav_link == 'Domande frequenti') ? 'text-primary' : 'text-secondary' ?>">
+                                <?php echo $nav_link ?>
+                            </a>
+                        </h6>
+
+                    <?php } ?>
+
+                </div>
+        </div>
+        </nav>
+    </header>
 
     <main>
         <div class="container-lg container_main">
@@ -109,6 +160,7 @@ $languages = [
                     <?php } ?>
                 </div>
                 <div class="col text-end">
+                    <i class="fa-solid fa-message text-info me-2"></i>
                     <select name="" id="">
                         <?php foreach ($languages as $language) { ?>
                             <option value=""><?php echo $language; ?></option>
